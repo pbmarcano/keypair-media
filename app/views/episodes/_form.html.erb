@@ -1,0 +1,52 @@
+<%= form_with(model: episode) do |form| %>
+  <% if episode.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(episode.errors.count, "error") %> prohibited this episode from being saved:</h2>
+
+      <ul>
+        <% episode.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :audio, style: "display: block" %>
+    <%= form.file_field :audio, accept: "audio/*" %>
+  </div>
+
+  <div>
+    <%= form.label :published_at, style: "display: block" %>
+    <%= form.datetime_field :published_at %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label :show_notes, style: "display: block" %>
+    <%= form.rich_text_area :show_notes %>
+  </div>
+
+  <div>
+    <%= form.label :explicit, style: "display: block" %>
+    <%= form.check_box :explicit %>
+  </div>
+
+  <div>
+    <%= form.label :duration, style: "display: block" %>
+    <%= form.number_field :duration %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
