@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
+  get "feed", to: "feeds#rss", format: "rss"
   root "episodes#index"
 end
