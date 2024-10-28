@@ -5,7 +5,7 @@ xml.rss :version => "2.0",
   "xmlns:atom" => "http://www.w3.org/2005/Atom", 
   "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd", 
   "xmlns:podcast" => "https://podcastindex.org/namespace/1.0",
-  "xmlns:content" => "http://purl.org/rss/1.0/modules/content" do
+  "xmlns:content" => "http://purl.org/rss/1.0/modules/content/" do
 
   xml.channel do
     # RSS required channel tags
@@ -49,15 +49,15 @@ xml.rss :version => "2.0",
         xml.title episode.title
         xml.enclosure url: rails_blob_url(episode.audio), length: episode.audio.byte_size, type: episode.audio.content_type
         xml.guid episode_url(episode)
+        xml.description episode.description # 
         xml.content :encoded do
           xml.cdata! sanitize(episode.show_notes)
         end
 
         # Apple recommended item tags
         xml.pubDate episode.published_at.to_fs(:rfc822)
-        xml.description episode.description # text. 1000 characters ish
         xml.itunes :explicit, episode.explicit?
-        xml.itunes :duration, episode.duration
+        xml.itunes :duration, episode.duration if episode.duration.present?
         xml.link episode_url(episode)
         # xml.itunes :image, href: "https://www.keypair.fm/public/episode2.jpg" # 1400x1400 - 3000x3000 episode artwork. jpg or png
       end
