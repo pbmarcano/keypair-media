@@ -25,7 +25,8 @@ xml.rss :version => "2.0",
     end
     xml.managingEditor "hello@keypair.fm (Rob)"
     xml.webMaster "peter@marcano.io (Pete)"
-    xml.lastBuildDate @episodes.first.published_at.to_fs(:rfc822)
+    # xml.lastBuildDate @episodes.first.published_at.to_fs(:rfc822)
+    xml.lastBuildDate DateTime.now.to_fs(:rfc822)
     xml.category "Technology"
     xml.ttl 60
 
@@ -47,9 +48,14 @@ xml.rss :version => "2.0",
       xml.item do
         # Apple required item tags
         xml.title episode.title
-        xml.enclosure url: rails_blob_url(episode.audio), length: episode.audio.byte_size, type: episode.audio.content_type
+        xml.enclosure(
+          url: rails_blob_url(episode.audio, disposition: "inline"), 
+          length: episode.audio.byte_size, 
+          type: episode.audio.content_type
+        )
+
         xml.guid episode_url(episode)
-        xml.description episode.description # 
+        xml.description episode.description
         xml.content :encoded do
           xml.cdata! sanitize(episode.show_notes)
         end

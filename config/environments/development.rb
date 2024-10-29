@@ -33,6 +33,9 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
+  config.active_storage.content_types_allowed_inline = %w(audio/mpeg image/webp image/avif image/png image/gif image/jpeg image/tiff image/vnd.adobe.photoshop image/vnd.microsoft.icon application/pdf)
+
+  config.hosts << /.*\.ngrok-free\.app/
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
