@@ -1,4 +1,5 @@
 class EpisodesController < ApplicationController
+  before_action :authenticate_admin!, only: %i[ new create edit update destroy ]
   before_action :set_episode, only: %i[ show edit update destroy ]
 
   # GET /episodes or /episodes.json
