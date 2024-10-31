@@ -1,27 +1,27 @@
 <div id="<%= dom_id episode %>">
-  <p>
-    <strong>Title:</strong>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
     <%= episode.title %>
   </p>
 
-  <p>
-    <strong>Published at:</strong>
-    <%= episode.published_at %>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Audio:</strong>
+    <%= audio_tag episode.audio, controls: true, autoplay: false %>
   </p>
 
-  <p>
-    <strong>Description:</strong>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
     <%= episode.description %>
   </p>
 
-  <p>
-    <strong>Explicit:</strong>
-    <%= episode.explicit %>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Published at:</strong>
+    <%= episode.published_at %>
   </p>
 
-  <p>
-    <strong>Duration:</strong>
-    <%= episode.duration %>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Explicit:</strong>
+    <%= episode.explicit %>
   </p>
 
 </div>
