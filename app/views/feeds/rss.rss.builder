@@ -25,8 +25,7 @@ xml.rss :version => "2.0",
     end
     xml.managingEditor "hello@keypair.fm (Rob)"
     xml.webMaster "peter@marcano.io (Pete)"
-    # xml.lastBuildDate @episodes.first.published_at.to_fs(:rfc822)
-    xml.lastBuildDate DateTime.now.to_fs(:rfc822)
+    xml.lastBuildDate @episodes.last.published_at.to_fs(:rfc822) || DateTime.now.to_fs(:rfc822)
     xml.category "Technology"
     xml.ttl 60
 
@@ -42,7 +41,7 @@ xml.rss :version => "2.0",
     end
 
     xml.atom :link, href: url_for(controller: :feeds, action: :rss, only_path: false), rel: "self", type: "application/rss+xml"
-    xml.podcast :guid, "https://episodes.keypair.fm/feed"
+    xml.podcast :guid, "https://media.keypair.fm/feed"
 
     @episodes.each do |episode|
       xml.item do
