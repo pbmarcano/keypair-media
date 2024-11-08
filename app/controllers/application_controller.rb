@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin!
-    return if Rails.env.production? # Optional: skip auth in development/test
+    return unless Rails.env.production? # Optional: skip auth in development/test
 
     authenticate_or_request_with_http_basic do |username, password|
       username == Rails.application.credentials.admin[:username] && 
