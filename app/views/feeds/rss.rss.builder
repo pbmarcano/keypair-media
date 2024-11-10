@@ -53,6 +53,7 @@ xml.rss :version => "2.0",
           type: episode.audio.content_type
         )
 
+        xml.id episode.id
         xml.guid episode_url(episode)
         xml.description episode.description
         xml.content :encoded do
