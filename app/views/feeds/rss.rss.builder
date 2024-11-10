@@ -25,7 +25,7 @@ xml.rss :version => "2.0",
     end
     xml.managingEditor "hello@keypair.fm (Rob)"
     xml.webMaster "peter@marcano.io (Pete)"
-    xml.lastBuildDate @episodes.last.published_at.to_fs(:rfc822) || DateTime.now.to_fs(:rfc822)
+    xml.lastBuildDate @episodes.first.published_at.to_fs(:rfc822) || DateTime.now.to_fs(:rfc822)
     xml.category "Technology"
     xml.ttl 60
 
