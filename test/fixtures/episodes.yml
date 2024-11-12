@@ -5,11 +5,9 @@ one:
   published_at: 2024-10-24 22:38:13
   description: MyString
   explicit: false
-  duration: 1
 
 two:
   title: MyString
   published_at: 2024-10-24 22:38:13
   description: MyString
   explicit: false
-  duration: 1

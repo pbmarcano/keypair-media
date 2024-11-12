@@ -15,7 +15,6 @@ class EpisodesTest < ApplicationSystemTestCase
     click_on "New episode"
 
     fill_in "Description", with: @episode.description
-    fill_in "Duration", with: @episode.duration
     check "Explicit" if @episode.explicit
     fill_in "Published at", with: @episode.published_at
     fill_in "Title", with: @episode.title
@@ -30,7 +29,6 @@ class EpisodesTest < ApplicationSystemTestCase
     click_on "Edit this episode", match: :first
 
     fill_in "Description", with: @episode.description
-    fill_in "Duration", with: @episode.duration
     check "Explicit" if @episode.explicit
     fill_in "Published at", with: @episode.published_at.to_s
     fill_in "Title", with: @episode.title

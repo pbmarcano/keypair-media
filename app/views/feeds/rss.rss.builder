@@ -63,7 +63,7 @@ xml.rss :version => "2.0",
         # Apple recommended item tags
         xml.pubDate episode.published_at.to_fs(:rfc822)
         xml.itunes :explicit, episode.explicit?
-        xml.itunes :duration, episode.duration if episode.duration.present?
+        xml.itunes :duration, episode.audio.metadata["duration"].to_i
         xml.link episode_url(episode)
         # xml.itunes :image, href: "https://www.keypair.fm/public/episode2.jpg" # 1400x1400 - 3000x3000 episode artwork. jpg or png
       end

@@ -37,11 +37,6 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :duration %>
-    <%= form.number_field :duration, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
     <%= form.label :show_notes %>
     <%= form.rich_text_area :show_notes, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
@@ -50,56 +45,3 @@
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>
-
-<%# <%= form_with(model: episode) do |form| %1> %>
-<%#   <% if episode.errors.any? %1> %>
-<%#     <div style="color: red"> %>
-<%#       <h2><%= pluralize(episode.errors.count, "error") %1> prohibited this episode from being saved:</h2> %>
-
-<%#       <ul> %>
-<%#         <% episode.errors.each do |error| %1> %>
-<%#           <li><%= error.full_message %1></li> %>
-<%#         <% end %1> %>
-<%#       </ul> %>
-<%#     </div> %>
-<%#   <% end %1> %>
-
-<%#   <div> %>
-<%#     <%= form.label :title, style: "display: block" %1> %>
-<%#     <%= form.text_field :title %1> %>
-<%#   </div> %>
-
-<%#   <div> %>
-<%#     <%= form.label :audio, style: "display: block" %1> %>
-<%#     <%= form.file_field :audio, accept: "audio/*" %1> %>
-<%#   </div> %>
-
-<%#   <div> %>
-<%#     <%= form.label :published_at, style: "display: block" %1> %>
-<%#     <%= form.datetime_field :published_at %1> %>
-<%#   </div> %>
-
-<%#   <div> %>
-<%#     <%= form.label :description, style: "display: block" %1> %>
-<%#     <%= form.text_field :description %1> %>
-<%#   </div> %>
-
-<%#   <div> %>
-<%#     <%= form.label :show_notes, style: "display: block" %1> %>
-<%#     <%= form.rich_text_area :show_notes %1> %>
-<%#   </div> %>
-
-<%#   <div> %>
-<%#     <%= form.label :explicit, style: "display: block" %1> %>
-<%#     <%= form.check_box :explicit %1> %>
-<%#   </div> %>
-
-<%#   <div> %>
-<%#     <%= form.label :duration, style: "display: block" %1> %>
-<%#     <%= form.number_field :duration %1> %>
-<%#   </div> %>
-
-<%#   <div> %>
-<%#     <%= form.submit %1> %>
-<%#   </div> %>
-<%# <% end %1> %>

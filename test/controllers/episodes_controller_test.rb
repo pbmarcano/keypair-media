@@ -17,7 +17,7 @@ class EpisodesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create episode" do
     assert_difference("Episode.count") do
-      post episodes_url, params: { episode: { description: @episode.description, duration: @episode.duration, explicit: @episode.explicit, published_at: @episode.published_at, title: @episode.title } }
+      post episodes_url, params: { episode: { description: @episode.description, explicit: @episode.explicit, published_at: @episode.published_at, title: @episode.title } }
     end
 
     assert_redirected_to episode_url(Episode.last)
@@ -34,7 +34,7 @@ class EpisodesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update episode" do
-    patch episode_url(@episode), params: { episode: { description: @episode.description, duration: @episode.duration, explicit: @episode.explicit, published_at: @episode.published_at, title: @episode.title } }
+    patch episode_url(@episode), params: { episode: { description: @episode.description, explicit: @episode.explicit, published_at: @episode.published_at, title: @episode.title } }
     assert_redirected_to episode_url(@episode)
   end
 
