@@ -23,7 +23,7 @@ xml.rss :version => "2.0",
     xml.copyright do
       xml.cdata! "Key Pair"
     end
-    xml.managingEditor "hello@keypair.fm (Rob)"
+    xml.managingEditor "hello@keypair.fm (Robert)"
     xml.webMaster "peter@marcano.io (Pete)"
     xml.lastBuildDate @episodes.first.published_at.to_fs(:rfc822) || DateTime.now.to_fs(:rfc822)
     xml.category "Technology"
@@ -35,7 +35,7 @@ xml.rss :version => "2.0",
     xml.itunes :explicit, "true" 
 
     # Apple recommended channel tags
-    xml.itunes :author, "Pete Marcano & Rob Redacted"
+    xml.itunes :author, "Pete Marcano & Robert SJ"
     xml.itunes :owner do
       xml.itunes :email, "peter@marcano.io"
     end
