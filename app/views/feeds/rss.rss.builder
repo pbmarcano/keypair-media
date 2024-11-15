@@ -35,7 +35,7 @@ xml.rss :version => "2.0",
     xml.itunes :explicit, "true" 
 
     # Apple recommended channel tags
-    xml.itunes :author, "Pete Marcano & Robert SJ"
+    xml.itunes :author, "Peter Marcano and Robert SJ"
     xml.itunes :owner do
       xml.itunes :email, "peter@marcano.io"
     end
