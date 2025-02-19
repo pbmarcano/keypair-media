@@ -44,7 +44,7 @@ xml.rss :version => "2.0",
       xml.itunes :email, "peter@marcano.io"
     end
 
-    xml.atom :link, href: url_for(controller: :feeds, action: :rss, only_path: false), rel: "self", type: "application/rss+xml"
+    xml.atom :link, href: feed_url, rel: "self", type: "application/rss+xml"
     xml.podcast :guid, "https://media.keypair.fm/feed"
 
     unless @episodes.nil?

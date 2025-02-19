@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :episodes
-  get "feed", to: "feeds#rss", format: "rss"
+  get "feed.xml", to: "episodes#index", as: :feed, defaults: { format: :xml }
+  # Temporary redirect while caches update
+  get "feed.rss", to: redirect("/feed.xml", status: 301)
   root "episodes#index"
 end

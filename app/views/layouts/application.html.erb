@@ -14,7 +14,7 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
-    <%= auto_discovery_link_tag(:rss, {controller: "feeds", action: "rss", title: "Key Pair Podcast"}) %>
+    <%= auto_discovery_link_tag(:rss, feed_url, {title: "Key Pair Podcast"}) %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
