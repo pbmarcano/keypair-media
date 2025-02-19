@@ -43,6 +43,8 @@ xml.rss :version => "2.0",
     xml.itunes :owner do
       xml.itunes :email, "peter@marcano.io"
     end
+    # temporary while feeds update and caches bust
+    xml.itunes :"new-feed-url", feed_url
 
     xml.atom :link, href: feed_url, rel: "self", type: "application/rss+xml"
     xml.podcast :guid, "https://media.keypair.fm/feed"
